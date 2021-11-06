@@ -24,7 +24,7 @@ function App(props){
     return (
       [
         <>
-       <input type="text" value={props.nome} onChange={modificarNome}></input>
+       <input className="text-centralizado" type="text" value={props.nome} onChange={modificarNome}></input>
        <h1>Hello {props.nome}</h1>
        <MeuComboBox />
         </>
