@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
@@ -16,12 +15,33 @@ class App extends React.Component{
 
   }
 
-  render(){
+  criaComboBox = () => {
+    const opcoes = ["Fulano", "Cicrano"]
+    const comboBoxOpcoes = opcoes.map(opcao => <option>{opcao}</option>)
+ 
     return (
-      <>
-        <input type="text" value={this.state.nome} onChange={this.modificarNome}></input>
-        <h1>Hello {this.state.nome}</h1>
-      </>
+      <select>
+        {comboBoxOpcoes}
+      </select>
+    )
+
+  }
+
+  render(){
+    const MeuComboBox = () => this.criaComboBox()
+
+    return (
+      [
+        <>
+       <input type="text" value={this.state.nome} onChange={this.modificarNome}></input>
+       <h1>Hello {this.state.nome}</h1>
+       {this.criaComboBox()}
+   
+       //Criar tags com meus components
+       <MeuComboBox />
+        </>
+      ]
+    
     )
   }
 }
