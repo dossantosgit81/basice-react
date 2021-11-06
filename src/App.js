@@ -27,14 +27,19 @@ class App extends React.Component{
 
   }
 
+  componentDidMount(){
+    console.log("Executou o componentDidMount")
+  }
+
   render(){
+    console.log("Executou o render")
     const MeuComboBox = () => this.criaComboBox()
 
     return (
       [
         <>
        <input type="text" value={this.state.nome} onChange={this.modificarNome}></input>
-       <h1>Hello {this.state.nome}</h1>
+       <h1>Hello {this.props.nome}</h1>
        {this.criaComboBox()}
    
        //Criar tags com meus components
